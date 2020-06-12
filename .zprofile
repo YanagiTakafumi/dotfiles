@@ -14,7 +14,7 @@ alias python="python3"
 eval `/usr/local/opt/coreutils/libexec/gnubin/dircolors ~/.dircolors-solarized/dircolors.ansi-dark`
 #alias ls='gls --color=auto'
 #alias tscreen="screen /dev/cu.usbserial-AI05V9J2"
-alias webdir="mkdir html css js fonts"
+#alias webdir="mkdir html css js fonts"
 alias brew='PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin brew'
 export PATH="$PATH:/usr/libexec"
 alias man="man -C ~/.man.conf"

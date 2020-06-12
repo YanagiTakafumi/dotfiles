@@ -126,6 +126,7 @@ alias tscreen="screen /dev/cu.usbserial-AI05V9J2"
 alias cat="bat"
 alias kadai="sh ~/devoirs/kadai.sh"
 alias blueterm="blueterm -b"
+alias webdir="mkdir html css js fonts"
 
 #git log的なあれ
 fshow() {
