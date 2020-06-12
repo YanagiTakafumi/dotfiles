@@ -1,4 +1,4 @@
 # dotfiles
 
 # List
-.zshrc .profile .vimrc .tmux.conf
+.zshrc .zprofile .vimrc .tmux.conf
