@@ -52,7 +52,6 @@ set number
 set smartindent
 set noshowmode
 set ttimeoutlen=50
-set ambiwidth=double
 
 if has('mouse')
 	set mouse=a
