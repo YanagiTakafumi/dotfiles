@@ -21,10 +21,8 @@ if dein#load_state('~/.cache/dein')
     call dein#add('https://github.com/hokaccha/vim-html5validator')
     call dein#add('https://github.com/tpope/vim-surround')
     call dein#add('https://github.com/tpope/vim-obsession')
-    call dein#add('https://github.com/dense-analysis/ale')
     call dein#add('https://github.com/vim-airline/vim-airline')
     call dein#add('https://github.com/vim-airline/vim-airline-themes')
-    call dein#add('https://github.com/ryanoasis/vim-devicons')
 
     endif
   call dein#end()
@@ -53,7 +51,8 @@ set hidden
 set number
 set smartindent
 set noshowmode
-set guifont=RobotoMono\ for\ Powerline:h11
+set ttimeoutlen=50
+set ambiwidth=double
 
 if has('mouse')
 	set mouse=a
@@ -81,20 +80,6 @@ endif
 
 let g:dein#auto_recache = 1
 
-" 保存時のみ実行する
-let g:ale_lint_on_text_changed = 0
-" 表示に関する設定
-let g:ale_sign_error = ''
-let g:ale_sign_warning = ''
-let g:airline#extensions#ale#open_lnum_symbol = '('
-let g:airline#extensions#ale#close_lnum_symbol = ')'
-let g:ale_echo_msg_format = '[%linter%]%code: %%s'
-highlight link ALEErrorSign Tag
-highlight link ALEWarningSign StorageClass
-" Ctrl + kで次の指摘へ、Ctrl + jで前の指摘へ移動
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-
 let g:airline_theme = 'wombat'
 set laststatus=2
 let g:airline#extensions#branch#enabled = 1
@@ -105,8 +90,8 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_section_c = '%t'
 let g:airline_section_x = '%{&filetype}'
-let g:airline_section_z = '%3l:%2v %{airline#extensions#ale#get_warning()} %{airline#extensions#ale#get_error()}'
-let g:airline#extensions#ale#error_symbol = ' '
-let g:airline#extensions#ale#warning_symbol = ' '
 let g:airline#extensions#default#section_truncate_width = {}
 let g:airline#extensions#whitespace#enabled = 1
+let g:airline_powerline_fonts = 1
+set guifont=Roboto\ Mono\ for\ Powerline:h11
+
