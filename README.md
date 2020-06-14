@@ -10,6 +10,7 @@ My shell is zsh.It was installed by Homebrew.
 # Directory tree
 ```
 .
+├── .gitignore
 ├── .tmux.conf
 ├── .vimrc
 ├── .zprofile
