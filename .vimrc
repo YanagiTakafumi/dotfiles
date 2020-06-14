@@ -214,4 +214,8 @@ endif
 " https://github.com/c9s/perlomni.vim
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
+" インデントガイド
+let g:indent_guides_enable_on_vim_startup = 1
+set ts=2 sw=2 et
+
 
