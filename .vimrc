@@ -23,8 +23,8 @@ if dein#load_state('~/.cache/dein')
     call dein#add('https://github.com/tpope/vim-obsession')
     call dein#add('https://github.com/vim-airline/vim-airline')
     call dein#add('https://github.com/vim-airline/vim-airline-themes')
-    call dein#add('https://github.com/cohama/lexima.vim')
     call dein#add('https://github.com/osyo-manga/vim-watchdogs')
+    call dein#add('https://github.com/MetalPhaeton/easybracket-vim')
 
     endif
   call dein#end()
@@ -175,7 +175,7 @@ endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " 補完
-inoremap <expr><CR>  pumvisible() ? "<C-y>" : "\<CR>"
+inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
 set completeopt=menuone,noinsert
 inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
 inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-p>"
