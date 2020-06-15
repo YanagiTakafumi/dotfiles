@@ -27,7 +27,8 @@ if dein#load_state('~/.cache/dein')
     call dein#add('https://github.com/MetalPhaeton/easybracket-vim')
     call dein#add('Shougo/neco-vim')
     call dein#add('https://github.com/Shougo/neocomplete.vim')
-
+    call dein#add('https://github.com/thinca/vim-quickrun')
+    
     endif
   call dein#end()
   call dein#save_state()
@@ -218,3 +219,5 @@ endif
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
+
