@@ -127,6 +127,7 @@ alias cat="bat"
 alias kadai="sh ~/devoirs/kadai.sh"
 alias blueterm="blueterm -b"
 alias webdir="mkdir html css js fonts"
+alias cargo_update="cargo install-update --all"
 
 #git log的なあれ
 fshow() {
