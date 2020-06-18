@@ -1,0 +1,92 @@
+{
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.fontWeight": "bold",
+    "workbench.colorCustomizations": {
+        "[Ayu Mirage Bordered]": {
+            "editorGroup.border": "#ff7b00",
+            "editor.background": "#020227",
+            "editor.foreground": "#6495ed",
+            "editorLineNumber.foreground": "#ee0a5d",
+            "editor.selectionBackground": "#5a53537c",
+            "editor.selectionHighlightBackground": "#00ced162",
+            "editor.lineHighlightBackground": "#ffffff27",
+            "scrollbarSlider.background": "#3b5558",
+            "scrollbarSlider.hoverBackground": "#37b4a6",
+            "statusBar.background": "#2e2b2b36",
+            "statusBar.noFolderBackground": "#200c2cbb",
+            "statusBar.debuggingBackground": "#ff7f50",
+            "statusBar.border": "#ff4500",
+            "statusBarItem.prominentBackground": "#ff7f50",
+            "activityBar.border": "#ff7f50",
+            "activityBar.background": "#2e2b2b36",
+            "activityBar.foreground": "#ff4500",
+            "button.background": "#778899",
+            "sideBar.background": "#020227",
+            "sideBar.border": "#ffff00",
+            "sideBar.foreground": "#5f9ea0",
+            "sideBarTitle.foreground": "#dfdbdb",
+            "tab.border": "#ffa500",
+            "tab.activeBackground": "#8f212169",
+            "tab.activeForeground": "#04ffff",
+            "tab.activeBorder": "#ffe602",
+            "badge.background": "#ff713e",
+        },
+        "[Ayu Light Bordered]": {
+            "editorLineNumber.foreground": "#ee0a5d",
+            "activityBar.foreground": "#ff4500",
+            "activityBar.border": "#919191"
+        },
+        "[Ayu Light]": {
+            "editorLineNumber.foreground": "#ee0a5d",
+            "activityBar.foreground": "#ff4500",
+            "activityBar.border": "#919191"
+        },
+        "[Horizon Bold]": {
+            "editorLineNumber.foreground": "#ee0a5d",
+            "editorGroup.border": "#fc025e",
+            "activityBar.border": "#fc025e85",
+            "activityBar.foreground": "#fc025e",
+            "statusBar.border": "#fc025e8a",
+            "sideBar.border": "#fc025e",
+            "editor.selectionBackground": "#474747"
+        },
+        "[Material Theme Darker]": {
+            "editorLineNumber.foreground": "#ee0a5d"
+        }
+    },
+    "diffEditor.renderSideBySide": true,
+    "editor.renderWhitespace": "boundary",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "java.configuration.checkProjectSettingsExclusions": false,
+    "debug.allowBreakpointsEverywhere": true,
+    "rust.rustup": {
+        "toolchain": "nightly-x86_64-apple-darwin",
+        "nightlyToolchain": "nightly-x86_64-apple-darwin"
+    },
+    "rust.mode": "rls",
+    "rust.rls": {
+        "useRustfmt": true
+    },
+    "rust-client.updateOnStartup": true,
+    "files.trimTrailingWhitespace": true,
+    "git.enableSmartCommit": true,
+    "python.jediEnabled": false,
+    "python.pythonPath": "python3",
+    "java.errors.incompleteClasspath.severity": "ignore",
+    "java.home": "/Library/Java/JavaVirtualMachines/liberica-jdk-14-full.jdk/Contents/Home",
+    "terminal.integrated.inheritEnv": false,
+    "C_Cpp.updateChannel": "Insiders",
+    "workbench.iconTheme": "material-icon-theme",
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "workbench.colorTheme": "Panda Syntax",
+    "java.semanticHighlighting.enabled": true,
+    "[html]": {
+        "editor.defaultFormatter": "lonefy.vscode-JS-CSS-HTML-formatter"
+    },
+    "java.import.gradle.home": "string",
+    "java.import.gradle.user.home": "string",
+}
