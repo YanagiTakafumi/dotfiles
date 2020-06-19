@@ -28,6 +28,8 @@ if dein#load_state('~/.cache/dein')
     call dein#add('Shougo/neco-vim')
     call dein#add('https://github.com/Shougo/neocomplete.vim')
     call dein#add('https://github.com/thinca/vim-quickrun')
+    call dein#add('Shougo/neosnippet')
+    call dein#add('Shougo/neosnippet-snippets')
     
     endif
   call dein#end()
@@ -140,8 +142,8 @@ let g:airline_right_alt_sep = '⮃'
 " let g:airline_symbols.readonly = '⭤'
 " let g:airline_symbols.linenr = '⭡'
 " インデントガイド
-let g:indent_guides_enable_on_vim_startup = 1
-set ts=2 sw=2 et
+" "let g:indent_guides_enable_on_vim_startup = 1
+" "set ts=2 sw=2 et
 " 補完
 "Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
