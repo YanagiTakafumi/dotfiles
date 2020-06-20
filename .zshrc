@@ -19,6 +19,10 @@ SAVEHIST=1000
 # Beep on error
 setopt BEEP
 
+# 重複コマンドをhistoryに残さない
+setopt HIST_IGNORE_DUPS
+
+
 # Use keycodes (generated via zkbd) if present, otherwise fallback on
 # values from terminfo
 if [[ -r ${ZDOTDIR:-$HOME}/.zkbd/${TERM}-${VENDOR} ]] ; then
@@ -121,13 +125,18 @@ setopt prompt_subst
 RPROMPT='`rprompt-git-current-branch`'
 
 #aliases
-alias ls="exa"
+#alias ls="exa"
+alias ls='gls --color=auto'
+#alias ls="ls -G"
 alias tscreen="screen /dev/cu.usbserial-AI05V9J2"
 alias cat="bat"
 alias kadai="sh ~/devoirs/kadai.sh"
 alias blueterm="blueterm -b"
 alias webdir="mkdir html css js fonts"
 alias cargo_update="cargo install-update --all"
+
+export CLICOLOR=1
+export LSCOLORS=DxGxcxdxCxegedabagacad
 
 #git log的なあれ
 fshow() {
