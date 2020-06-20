@@ -92,7 +92,7 @@ function rprompt-git-current-branch {
   st=`git status 2> /dev/null`
   if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
     # 全てcommitされてクリーンな状態
-    branch_status="%F{048}\(._.) \ue0a0"
+    branch_status="%F{048}\(._.)"
   elif [[ -n `echo "$st" | grep "^Untracked files"` ]]; then
     # gitに管理されていないファイルがある状態
     branch_status="%F{160}?(._.)"
@@ -111,7 +111,7 @@ function rprompt-git-current-branch {
     branch_status="%F{blue}"
   fi
   # ブランチ名を色付きで表示する
-  echo "${branch_status}[$branch_name]"
+  echo "${branch_status}[\ue0a0 $branch_name]"
 }
 
 # プロンプトが表示されるたびにプロンプト文字列を評価、置換する
