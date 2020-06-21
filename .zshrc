@@ -13,8 +13,8 @@ disable log
 
 # Save command history
 HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
-HISTSIZE=2000
-SAVEHIST=1000
+HISTSIZE=4000
+SAVEHIST=2000
 
 # Beep on error
 setopt BEEP
