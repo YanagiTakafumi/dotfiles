@@ -124,8 +124,8 @@ setopt prompt_subst
 # cool prompt
 PROMPT_Apple='%K{238}%F{white}  %f%k'
 PROMPT_DIR='%K{039}%F{238}  %~ %f%k'
-PROMPT_GIT='%K{172}%F{039}%f%F{238} %f'
-PROMPT_end='%F{172}%k%K{235}%k%f'
+PROMPT_GIT='%K{214}%F{039}%f%F{238} %f'
+PROMPT_end='%F{214}%k%K{235}%k%f'
 PROMPT='$PROMPT_Apple$PROMPT_DIR$PROMPT_GIT $(prompt-git-current-branch) $PROMPT_end
 %B%F{162}%f%b'
 # cool rprompt
