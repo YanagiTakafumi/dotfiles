@@ -133,7 +133,7 @@ RPROMPT_check='%K{235}%F{238}%f%k%K{238}%(?!%F{034}  %f!%F{160}  %f)%F{
 RPROMPT_time='%K{white}%F{238}%@ %f%k'
 RPROMPT='$RPROMPT_check$RPROMPT_time'
 
-#aliases
+# aliases
 alias ls="lsd"
 #alias ls='gls --color=auto'
 #alias ls="ls -G"
