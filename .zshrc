@@ -126,12 +126,12 @@ PROMPT_Apple='%K{238}%F{white}  %f%k'
 PROMPT_DIR='%K{039}%F{238}  %~ %f%k'
 PROMPT_GIT='%K{172}%F{039}%f%F{238}   %f'
 PROMPT_end=' %F{172}%k%K{235}%k%f'
-#cool prompt
+# cool prompt
 PROMPT='$PROMPT_Apple$PROMPT_DIR$PROMPT_GIT $(prompt-git-current-branch) $PROMPT_end
 %B%F{162}%f%b'
-
+# cool rprompt
 RPROMPT_check='%K{235}%F{238}%f%k%K{238}%(?!%F{034}  %f!%F{160}  %f)%F{white}%f'
-RPROMPT_time='%K{white}%F{238}%@%f%k'
+RPROMPT_time='%K{white}%F{238}%@ %f%k'
 RPROMPT='$RPROMPT_check$RPROMPT_time'
 
 #aliases
