@@ -39,7 +39,7 @@ endif
 filetype plugin indent on
 syntax enable
 set background=dark
-colorscheme solarized 
+colorscheme industry 
 set encoding=utf-8
 scriptencoding utf-8
 set fileencoding=utf-8
