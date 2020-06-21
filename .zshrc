@@ -115,7 +115,7 @@ function prompt-git-current-branch {
     branch_status="%F{blue}"
   fi
   # ブランチ名を色付きで表示する
-  echo "%F{238}$branch_name ${branch_status}%f"
+  echo " %F{238}$branch_name ${branch_status}%f"
 }
 
 # プロンプトが表示されるたびにプロンプト文字列を評価、置換する
@@ -124,8 +124,8 @@ setopt prompt_subst
 # cool prompt
 PROMPT_Apple='%K{238}%F{white}  %f%k'
 PROMPT_DIR='%K{039}%F{238}  %~ %f%k'
-PROMPT_GIT='%K{172}%F{039}%f%F{238}   %f'
-PROMPT_end=' %F{172}%k%K{235}%k%f'
+PROMPT_GIT='%K{172}%F{039}%f%F{238}  %f'
+PROMPT_end='%F{172}%k%K{235}%k%f'
 PROMPT='$PROMPT_Apple$PROMPT_DIR$PROMPT_GIT $(prompt-git-current-branch) $PROMPT_end
 %B%F{162}%f%b'
 # cool rprompt
