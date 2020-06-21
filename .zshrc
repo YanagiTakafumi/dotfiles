@@ -99,10 +99,10 @@ function prompt-git-current-branch {
     branch_status=""
   elif [[ -n `echo "$st" | grep "^Untracked files"` ]]; then
     # gitに管理されていないファイルがある状態?
-    branch_status=""
+    branch_status="%F{160}"
   elif [[ -n `echo "$st" | grep "^Changes not staged for commit"` ]]; then
     # git addされていないファイルがある状態+
-    branch_status=""
+    branch_status="%F{160}"
   elif [[ -n `echo "$st" | grep "^Changes to be committed"` ]]; then
     # git commitされていないファイルがある状態×
     branch_status="%F{226}"
