@@ -71,8 +71,8 @@ fi
 [[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-search
 
 # cute prompt
-PROMPT='%F{041}%f%F{197}[%f%F{009}%n%f:%F{190}%~%f%F{197}]%f
-%F{046}%B%(?!\(._.)/%f!%F{009}?(;_;%)?)%b%f%F{212}$%f '
+#PROMPT='%F{041}%f%F{197}[%f%F{009}%n%f:%F{190}%~%f%F{197}]%f
+#%F{046}%B%(?!\(._.)/%f!%F{009}?(;_;%)?)%b%f%F{212}$%f '
 
 
 # Useful support for interacting with Terminal.app or other terminal programs
@@ -84,8 +84,8 @@ export FZF_DEFAULT_OPTS="--reverse"
 #ターミナルの見た目を通常通りにする
 export TERM='xterm-256color'
 
-#Gitのブランチの状態を左に表示する
-function rprompt-git-current-branch {
+#Gitのブランチの状態をプロンプトに表示する
+function prompt-git-current-branch {
   local branch_name st branch_status
 
   if [ ! -e  ".git" ]; then
@@ -96,16 +96,16 @@ function rprompt-git-current-branch {
   st=`git status 2> /dev/null`
   if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
     # 全てcommitされてクリーンな状態
-    branch_status="%F{048}\(._.)"
+    branch_status=""
   elif [[ -n `echo "$st" | grep "^Untracked files"` ]]; then
-    # gitに管理されていないファイルがある状態
-    branch_status="%F{160}?(._.)"
+    # gitに管理されていないファイルがある状態?
+    branch_status=""
   elif [[ -n `echo "$st" | grep "^Changes not staged for commit"` ]]; then
-    # git addされていないファイルがある状態
-    branch_status="%F{160}+(._.)"
+    # git addされていないファイルがある状態+
+    branch_status=""
   elif [[ -n `echo "$st" | grep "^Changes to be committed"` ]]; then
-    # git commitされていないファイルがある状態
-    branch_status="%F{226}!(･口･)"
+    # git commitされていないファイルがある状態×
+    branch_status="%F{226}"
   elif [[ -n `echo "$st" | grep "^rebase in progress"` ]]; then
     # コンフリクトが起こった状態
     echo "%F{red}!(no branch)"
@@ -115,18 +115,24 @@ function rprompt-git-current-branch {
     branch_status="%F{blue}"
   fi
   # ブランチ名を色付きで表示する
-  echo "${branch_status}[\ue0a0 $branch_name]"
+  echo "%F{238}$branch_name ${branch_status}%f"
 }
 
 # プロンプトが表示されるたびにプロンプト文字列を評価、置換する
 setopt prompt_subst
 
-# プロンプトの右側(RPROMPT)にメソッドの結果を表示させる
-RPROMPT='`rprompt-git-current-branch`'
+
+PROMPT_Apple='%K{238}%F{white}  %f%k'
+PROMPT_DIR='%K{039}%F{238}  %~ %f%k'
+PROMPT_GIT='%K{172}%F{039}%f%F{238}   %f'
+PROMPT_end=' %F{172}%k%K{235}%k%f'
+#cool prompt
+PROMPT='$PROMPT_Apple$PROMPT_DIR$PROMPT_GIT $(prompt-git-current-branch) $PROMPT_end
+%B%F{162}%f%b'
 
 #aliases
-#alias ls="exa"
-alias ls='gls --color=auto'
+alias ls="lsd"
+#alias ls='gls --color=auto'
 #alias ls="ls -G"
 alias tscreen="screen /dev/cu.usbserial-AI05V9J2"
 alias cat="bat"
