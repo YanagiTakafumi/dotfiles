@@ -130,6 +130,10 @@ PROMPT_end=' %F{172}%k%K{235}%k%f'
 PROMPT='$PROMPT_Apple$PROMPT_DIR$PROMPT_GIT $(prompt-git-current-branch) $PROMPT_end
 %B%F{162}%f%b'
 
+RPROMPT_check='%K{235}%F{238}%f%k%K{238}%(?!%F{034}  %f!%F{160}  %f)%F{white}%f'
+RPROMPT_time='%K{white}%F{238}%@%f%k'
+RPROMPT='$RPROMPT_check$RPROMPT_time'
+
 #aliases
 alias ls="lsd"
 #alias ls='gls --color=auto'
