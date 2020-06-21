@@ -122,7 +122,7 @@ function prompt-git-current-branch {
 setopt prompt_subst
 
 # cool prompt
-PROMPT_Apple='%K{238}%F{white}  %f%k'
+PROMPT_Apple='%K{238}%F{255}  %f%k'
 PROMPT_DIR='%K{039}%F{238}  %~ %f%k'
 PROMPT_GIT='%K{214}%F{039}%f%F{238} %f'
 PROMPT_end='%F{214}%k%K{235}%k%f'
