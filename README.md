@@ -21,3 +21,6 @@ My shell is zsh.It was installed by Homebrew.
 ├── .zshrc
 └── README.md
 ```
+# ScreenShot
+![ScreenShot]
+(https://user-images.githubusercontent.com/57137136/85274345-c7aa5600-b4b9-11ea-8b2f-6eb6ec08ee01.png)
