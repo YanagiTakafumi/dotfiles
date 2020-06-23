@@ -1,6 +1,7 @@
 {
     "workbench.startupEditor": "newUntitledFile",
     "editor.fontWeight": "bold",
+    "editor.fontFamily": "'Hack Nerd Font'",
     "workbench.colorCustomizations": {
         "[Ayu Mirage Bordered]": {
             "editorGroup.border": "#ff7b00",
@@ -89,4 +90,5 @@
     },
     "java.import.gradle.home": "string",
     "java.import.gradle.user.home": "string",
+    "scm.inputFontFamily": "'Hack Nerd Font'",
 }
