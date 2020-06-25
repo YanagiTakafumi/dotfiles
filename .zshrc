@@ -120,7 +120,7 @@ function prompt-git-current-branch {
 
 # プロンプトが表示されるたびにプロンプト文字列を評価、置換する
 setopt prompt_subst
-
+# 背景で強引にうまく誤魔化す
 # cool prompt
 PROMPT_Apple='%K{238}%F{255}  %f%k'
 PROMPT_DIR='%K{039}%F{238}  %~ %f%k'
