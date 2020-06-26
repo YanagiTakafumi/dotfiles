@@ -70,10 +70,19 @@ fi
 [[ -n ${key[Up]} ]] && bindkey "${key[Up]}" up-line-or-search
 [[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-search
 
-# cute prompt
-#PROMPT='%F{041}%f%F{197}[%f%F{009}%n%f:%F{190}%~%f%F{197}]%f
-#%F{046}%B%(?!\(._.)/%f!%F{009}?(;_;%)?)%b%f%F{212}$%f '
 
+function exit-code-emoticon()
+{
+    if [ $EXIT_CODE -eq 0 ]
+    then
+        echo -n "(\`･ω ･´)b [$EXIT_CODE]"
+    else
+        echo -n "(´･ω ･\`)p [$EXIT_CODE]"
+    fi
+}
+# cute prompt
+#PROMPT='%F{027}%n%f %F{087}%~%f
+#%(?.%B%K{051}.%B%K{207})%(?!(๑˃̵ᴗ˂̵)ﻭ!(;^ω^%))%k%b %F{051}❯%f%F{123}❯%f%F{165}❯%f '
 
 # Useful support for interacting with Terminal.app or other terminal programs
 [ -r "/etc/zshrc_$TERM_PROGRAM" ] && . "/etc/zshrc_$TERM_PROGRAM"
