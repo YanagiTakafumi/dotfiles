@@ -137,7 +137,7 @@ PROMPT_GIT='%K{214}%F{039}%f%F{238} %f'
 # 普通の時の背景は235 solarizedを使う時は0
 PROMPT_end='%F{214}%k%K{0}%k%f'
 PROMPT='$PROMPT_Apple$PROMPT_DIR$PROMPT_GIT $(prompt-git-current-branch) $PROMPT_end
-%B%F{162}%f%b'
+%F{051}❯%f%F{123}❯%f%F{165}❯%f '
 # cool rprompt
 # 普通の時は235 solarizedの時は0
 RPROMPT_check='%K{0}%F{238}%f%k%K{238}%(?!%F{034}  %f!%F{160}  %f)%F{white}%f'
