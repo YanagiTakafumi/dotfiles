@@ -80,9 +80,6 @@ function exit-code-emoticon()
         echo -n "(´･ω ･\`)p [$EXIT_CODE]"
     fi
 }
-# cute prompt
-#PROMPT='%F{027}%n%f %F{087}%~%f
-#%(?.%B%K{051}.%B%K{207})%(?!(๑˃̵ᴗ˂̵)ﻭ!(;^ω^%))%k%b %F{051}❯%f%F{123}❯%f%F{165}❯%f '
 
 # Useful support for interacting with Terminal.app or other terminal programs
 [ -r "/etc/zshrc_$TERM_PROGRAM" ] && . "/etc/zshrc_$TERM_PROGRAM"
@@ -129,20 +126,36 @@ function prompt-git-current-branch {
 
 # プロンプトが表示されるたびにプロンプト文字列を評価、置換する
 setopt prompt_subst
+
+# cute prompt
+PROMPT_EMOJI_T='\(\`･ω ･´%)'
+PROMPT_EMOJI_F='(´･ω ･\`%)'
+#PROMPT='%F{027}%n%f %F{087}%~%f
+#%(?.%B%K{051}.%B%K{207})%(?!$PROMPT_EMOJI_Tb%k!%K{207}$PROMPT_EMOJI_Fp)%k%b%F{051}❯%f%F{123}❯%f%F{165}❯%f '
+
+# cute2 prompt
+SHOBON=$'\(´･ω･\`%)'
+SHAKIN=$'\(\`･ω･´%)'
+# PROMPT='%(?.%F{cyan}$SHAKIN.%F{red}$SHOBON) %f %B%F{green}%n:%f%F{red}%~%f%b $ '
+
 # 背景で強引にうまく誤魔化す
 # cool prompt
 PROMPT_Apple='%K{238}%F{255}  %f%k'
 PROMPT_DIR='%K{039}%F{238}  %~ %f%k'
 PROMPT_GIT='%K{214}%F{039}%f%F{238} %f'
 # 普通の時の背景は235 solarizedを使う時は0
-PROMPT_end='%F{214}%k%K{0}%k%f'
+PROMPT_end='%F{214}%k%K{235}%k%f'
 PROMPT='$PROMPT_Apple$PROMPT_DIR$PROMPT_GIT $(prompt-git-current-branch) $PROMPT_end
 %F{051}❯%f%F{123}❯%f%F{165}❯%f '
 # cool rprompt
 # 普通の時は235 solarizedの時は0
-RPROMPT_check='%K{0}%F{238}%f%k%K{238}%(?!%F{034}  %f!%F{160}  %f)%F{white}%f'
+RPROMPT_check='%K{235}%F{238}%f%k%K{238}%(?!%F{034}  %f!%F{160}  %f)%F{white}%f'
 RPROMPT_time='%K{white}%F{238}%@ %f%k'
-RPROMPT='$RPROMPT_check$RPROMPT_time'
+#RPROMPT='$RPROMPT_check$RPROMPT_time'
+
+# simple prompt
+#PROMPT='%F{027}%n%f %F{087}%~%f
+#%F{051}❯%f%F{123}❯%f%F{165}❯%f '
 
 # aliases
 alias ls="lsd"
@@ -154,7 +167,7 @@ alias kadai="sh ~/devoirs/kadai.sh"
 alias blueterm="blueterm -b"
 alias webdir="mkdir html css js fonts"
 alias cargo_update="cargo install-update --all"
-alias color="for c in {000..255}; do echo -n "\e[38;5;${c}m $c" ; [ $(($c%16)) -eq 15 ] && echo;done;echo"
+# alias color="for c in {000..255}; do echo -n "\e[38;5;${c}m $c" ; [ $(($c%16)) -eq 15 ] && echo;done;echo"
 
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
