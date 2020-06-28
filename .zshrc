@@ -150,8 +150,8 @@ PROMPT='$PROMPT_Apple$PROMPT_DIR$PROMPT_GIT $(prompt-git-current-branch) $PROMPT
 # cool rprompt
 # 普通の時は235 solarizedの時は0
 RPROMPT_check='%K{235}%F{238}%f%k%K{238}%(?!%F{034}  %f!%F{160}  %f)%F{white}%f'
-RPROMPT_time='%K{white}%F{238}%@ %f%k'
-#RPROMPT='$RPROMPT_check$RPROMPT_time'
+RPROMPT_time='%K{white}%F{238} %@ %f%k'
+RPROMPT='$RPROMPT_check$RPROMPT_time'
 
 # simple prompt
 #PROMPT='%F{027}%n%f %F{087}%~%f
