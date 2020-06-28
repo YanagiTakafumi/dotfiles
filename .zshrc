@@ -144,12 +144,12 @@ PROMPT_Apple='%K{238}%F{255}  %f%k'
 PROMPT_DIR='%K{039}%F{238}  %~ %f%k'
 PROMPT_GIT='%K{214}%F{039}%f%F{238} %f'
 # 普通の時の背景は235 solarizedを使う時は0
-PROMPT_end='%F{214}%k%K{235}%k%f'
+PROMPT_end='%F{214}%k%K{0}%k%f'
 PROMPT='$PROMPT_Apple$PROMPT_DIR$PROMPT_GIT $(prompt-git-current-branch) $PROMPT_end
 %F{051}❯%f%F{123}❯%f%F{165}❯%f '
 # cool rprompt
 # 普通の時は235 solarizedの時は0
-RPROMPT_check='%K{235}%F{238}%f%k%K{238}%(?!%F{034}  %f!%F{160}  %f)%F{white}%f'
+RPROMPT_check='%K{0}%F{238}%f%k%K{238}%(?!%F{034}  %f!%F{160}  %f)%F{white}%f'
 RPROMPT_time='%K{white}%F{238} %@ %f%k'
 RPROMPT='$RPROMPT_check$RPROMPT_time'
 
@@ -169,8 +169,30 @@ alias webdir="mkdir html css js fonts"
 alias cargo_update="cargo install-update --all"
 # alias color="for c in {000..255}; do echo -n "\e[38;5;${c}m $c" ; [ $(($c%16)) -eq 15 ] && echo;done;echo"
 
-export CLICOLOR=1
-export LSCOLORS=DxGxcxdxCxegedabagacad
+# 失敗したコマンドを履歴に残さない
+__record_command() {
+  typeset -g _LASTCMD=${1%%$'\n'}
+  return 1
+}
+zshaddhistory_functions+=(__record_command)
+
+__update_history() {
+  local last_status="$?"
+
+  # hist_ignore_space
+  if [[ ! -n ${_LASTCMD%% *} ]]; then
+    return
+  fi
+
+  # hist_reduce_blanks
+  local cmd_reduce_blanks=$(echo ${_LASTCMD} | tr -s ' ')
+
+  # Record the commands that have succeeded
+  if [[ ${last_status} == 0 ]]; then
+    print -sr -- "${cmd_reduce_blanks}"
+  fi
+}
+precmd_functions+=(__update_history)
 
 #git log的なあれ
 fshow() {
