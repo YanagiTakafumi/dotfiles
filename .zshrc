@@ -138,7 +138,6 @@ SHOBON=$'\(´･ω･\`%)'
 SHAKIN=$'\(\`･ω･´%)'
 # PROMPT='%(?.%F{cyan}$SHAKIN.%F{red}$SHOBON) %f %B%F{green}%n:%f%F{red}%~%f%b $ '
 
-# 背景で強引にうまく誤魔化す
 # cool prompt
 PROMPT_Apple='%K{238}%F{255}  %f%k'
 PROMPT_DIR='%K{039}%F{238}  %~ %f%k'
