@@ -124,6 +124,39 @@ function prompt-git-current-branch {
   echo " %F{238} $branch_name ${branch_status}%f"
 }
 
+function kuwata-branch {
+  local branch_name st branch_status
+
+  if [ ! -e  ".git" ]; then
+    # gitで管理されていないディレクトリは何も返さない
+    return
+  fi
+  branch_name=`git rev-parse --abbrev-ref HEAD 2> /dev/null`
+  st=`git status 2> /dev/null`
+  if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
+    # 全てcommitされてクリーンな状態
+    branch_status=""
+  elif [[ -n `echo "$st" | grep "^Untracked files"` ]]; then
+    # gitに管理されていないファイルがある状態?
+    branch_status="%F{160}"
+  elif [[ -n `echo "$st" | grep "^Changes not staged for commit"` ]]; then
+    # git addされていないファイルがある状態+
+    branch_status="%F{160}"
+  elif [[ -n `echo "$st" | grep "^Changes to be committed"` ]]; then
+    # git commitされていないファイルがある状態×
+    branch_status="%F{226}"
+  elif [[ -n `echo "$st" | grep "^rebase in progress"` ]]; then
+    # コンフリクトが起こった状態
+    echo "%F{red}!(no branch)"
+    return
+  else
+    # 上記以外の状態の場合は青色で表示させる
+    branch_status="%F{blue}"
+  fi
+  # ブランチ名を色付きで表示する
+  echo " %K{%F{238} $branch_name ${branch_status}%f"
+}
+
 # プロンプトが表示されるたびにプロンプト文字列を評価、置換する
 setopt prompt_subst
 
@@ -139,8 +172,8 @@ SHAKIN=$'\(\`･ω･´%)'
 # PROMPT='%(?.%F{cyan}$SHAKIN.%F{red}$SHOBON) %f %B%F{green}%n:%f%F{red}%~%f%b $ '
 
 # cool prompt
-PROMPT_Apple='%K{238}%F{255}  %f%k'
-PROMPT_DIR='%K{039}%F{238}  %~ %f%k'
+PROMPT_Apple='%K{238}%F{255}  %f%k%K{039}%F{238}%f%k'
+PROMPT_DIR='%K{039}%F{238}  %~ %f%k'
 PROMPT_GIT='%K{214}%F{039}%f%F{238} %f'
 # 普通の時の背景は235 solarizedを使う時は0
 PROMPT_end='%F{214}%k%K{0}%k%f'
@@ -155,6 +188,11 @@ RPROMPT='$RPROMPT_check$RPROMPT_time'
 # simple prompt
 #PROMPT='%F{027}%n%f %F{087}%~%f
 #%F{051}❯%f%F{123}❯%f%F{165}❯%f '
+
+# kuwata prompt
+PROMPT_DIR='%K{039}%F{238} %~ %f%k'
+PROMPT_last='%(?!%K{016}%F{039}%f %F{white}$%f %k%F{016}%f!%K{127}%F{039}%f %F{white}$%f %k%K{008}%F{127}%f%k)'
+#PROMPT='$PROMPT_DIR$PROMPT_last '
 
 # aliases
 alias ls="lsd"
