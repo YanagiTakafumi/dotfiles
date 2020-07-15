@@ -140,8 +140,8 @@ SHAKIN=$'\(\`･ω･´%)'
 # PROMPT='%(?.%F{cyan}$SHAKIN.%F{red}$SHOBON) %f %B%F{green}%n:%f%F{red}%~%f%b $ '
 
 # cool prompt
-PROMPT_Apple='%K{238}%F{255}  %f%k%K{039}%F{238}%f%k'
-PROMPT_DIR='%K{039}%F{238}  %~ %f%k'
+PROMPT_Apple='%K{238}%F{255}  %f%k%K{039}%F{238}%f%k%K{039}%F{238} %f%k'
+PROMPT_DIR='%K{039}%F{238} %~ %f%k'
 PROMPT_GIT='%K{214}%F{039}%f%F{238} %f'
 # 普通の時の背景は235 solarizedを使う時は0
 PROMPT_end='%F{214}%k%K{0}%k%f'
