@@ -172,7 +172,7 @@ alias kadai="sh ~/devoirs/kadai.sh"
 alias blueterm="blueterm -b"
 alias webdir="mkdir html css js fonts"
 alias cargo_update="cargo install-update --all"
-# alias color="for c in {000..255}; do echo -n "\e[38;5;${c}m $c" ; [ $(($c%16)) -eq 15 ] && echo;done;echo"
+
 
 # 失敗したコマンドを履歴に残さない
 __record_command() {
