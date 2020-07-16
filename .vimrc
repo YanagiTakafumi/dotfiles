@@ -30,6 +30,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('https://github.com/thinca/vim-quickrun')
     call dein#add('Shougo/neosnippet')
     call dein#add('Shougo/neosnippet-snippets')
+    call dein#add('ryanoasis/vim-devicons')
     
     endif
   call dein#end()
@@ -226,5 +227,13 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 let g:neosnippet#snippets_directory="~/.cache/neosnippet"
 imap <expr><C-k> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 smap <C-k> <Plug>(neocomplcache_snippets_expand)
+
+" フォルダアイコンを表示
+  let g:WebDevIconsNerdTreeBeforeGlyphPadding = ""
+  let g:WebDevIconsUnicodeDecorateFolderNodes = v:true
+  " after a re-source, fix syntax matching issues (concealing brackets):
+  if exists('g:loaded_webdevicons')
+    call webdevicons#refresh()
+  endif
 
 
