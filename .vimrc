@@ -31,6 +31,7 @@ if dein#load_state('~/.cache/dein')
     call dein#add('Shougo/neosnippet')
     call dein#add('Shougo/neosnippet-snippets')
     call dein#add('ryanoasis/vim-devicons')
+
     
     endif
   call dein#end()
