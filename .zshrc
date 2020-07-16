@@ -86,6 +86,7 @@ function exit-code-emoticon()
 
 #fzfの表示を上側にする
 export FZF_DEFAULT_OPTS="--reverse"
+ENHANCD_FILTER=fzf:peco:fzy
 
 #ターミナルの見た目を通常通りにする
 export TERM='xterm-256color'
