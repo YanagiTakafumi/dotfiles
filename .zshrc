@@ -23,6 +23,9 @@ setopt BEEP
 setopt HIST_IGNORE_DUPS
 
 
+autoload -U compinit
+compinit -u
+
 # Use keycodes (generated via zkbd) if present, otherwise fallback on
 # values from terminfo
 if [[ -r ${ZDOTDIR:-$HOME}/.zkbd/${TERM}-${VENDOR} ]] ; then
@@ -173,7 +176,6 @@ alias kadai="sh ~/devoirs/kadai.sh"
 alias blueterm="blueterm -b"
 alias webdir="mkdir html css js fonts"
 alias cargo_update="cargo install-update --all"
-
 
 # 失敗したコマンドを履歴に残さない
 __record_command() {
