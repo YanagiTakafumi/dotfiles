@@ -161,10 +161,11 @@ RPROMPT='$RPROMPT_check$RPROMPT_time'
 #PROMPT='%F{027}%n%f %F{087}%~%f
 #%F{051}❯%f%F{123}❯%f%F{165}❯%f '
 
-# kuwata prompt
+# kuwa prompt
+PROMPT_GUITER='%K{159} 🎸 %k%K{039}%F{159}%f%k'
 PROMPT_DIR='%K{039}%F{238} %~ %f%k'
 PROMPT_last='%(?!%K{237}%F{039}%f %F{white}$%f %k%K{008}%F{237}%f%k!%K{127}%F{039}%f %F{white}$%f %k%K{008}%F{127}%f%k)'
-#PROMPT='$PROMPT_DIR$PROMPT_last '
+#PROMPT='$PROMPT_GUITER$PROMPT_DIR$PROMPT_last '
 
 # aliases
 alias ls="lsd"
