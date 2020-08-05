@@ -256,4 +256,6 @@
     "latex-workshop.latex.autoBuild.run": "never",
     "vetur.dev.vlsPath": "/User/yanagitakafumi/.nodebrew/current/lib/node_modules/vls",
     "vetur.experimental.templateInterpolationService": true,
+    "powermode.enabled": true,
+    "powermode.presets": "magic"
 }
