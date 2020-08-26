@@ -258,5 +258,6 @@
     "vetur.experimental.templateInterpolationService": true,
     "powermode.enabled": true,
     "powermode.presets": "magic",
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "diffEditor.ignoreTrimWhitespace": false
 }

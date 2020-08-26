@@ -162,6 +162,7 @@ RPROMPT='$RPROMPT_check$RPROMPT_time'
 #%F{051}❯%f%F{123}❯%f%F{165}❯%f '
 
 
+
 # aliases
 alias ls="lsd"
 #alias ls='gls --color=auto'
