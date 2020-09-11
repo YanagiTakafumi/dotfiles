@@ -141,7 +141,8 @@ PROMPT_EMOJI_F='(´･ω ･\`%)'
 # cute2 prompt
 SHOBON=$'\(´･ω･\`%)'
 SHAKIN=$'\(\`･ω･´%)'
-# PROMPT='%(?.%F{cyan}$SHAKIN.%F{red}$SHOBON) %f %B%F{green}%n:%f%F{red}%~%f%b $ '
+# PROMPT='%B%F{green}%n:%f%F{red}%~%f%b 
+# %(?.%F{cyan}$SHAKIN.%F{red}$SHOBON) %f $ '
 
 # cool prompt
 PROMPT_Apple='%K{238}%F{255}  %f%k%K{039}%F{238}%f%k%K{039}%F{238} %f%k'
