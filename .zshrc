@@ -159,8 +159,8 @@ RPROMPT_time='%K{white}%F{238} %@ %f%k'
 RPROMPT='$RPROMPT_check$RPROMPT_time'
 
 # simple prompt
-#PROMPT='%F{027}%n%f %F{087}%~%f
-#%F{051}❯%f%F{123}❯%f%F{165}❯%f '
+# PROMPT='%F{027}%n%f %F{087}%~%f
+# %F{051}❯%f%F{123}❯%f%F{165}❯%f '
 
 
 
@@ -263,6 +263,9 @@ fi
 
 #jenv
 eval "$(jenv init -)"
+
+# githubを補完する
+eval "$(gh completion -s zsh)"
 
 # fzf
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
