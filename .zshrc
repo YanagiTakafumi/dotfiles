@@ -109,13 +109,13 @@ function prompt-git-current-branch {
     branch_status=""
   elif [[ -n `echo "$st" | grep "^Untracked files"` ]]; then
     # gitに管理されていないファイルがある状態?
-    branch_status="%F{160}"
+    branch_status="%F{207}"
   elif [[ -n `echo "$st" | grep "^Changes not staged for commit"` ]]; then
     # git addされていないファイルがある状態+
-    branch_status="%F{160}"
+    branch_status="%F{207}"
   elif [[ -n `echo "$st" | grep "^Changes to be committed"` ]]; then
     # git commitされていないファイルがある状態×
-    branch_status="%F{226}"
+    branch_status="%F{009}"
   elif [[ -n `echo "$st" | grep "^rebase in progress"` ]]; then
     # コンフリクトが起こった状態
     echo "%F{red}!(no branch)"
@@ -185,8 +185,15 @@ RPROMPT_time='%K{white}%F{238} %@ %f%k'
 # %F{051}❯%f%F{123}❯%f%F{165}❯%f '
 
 # cute prompt
-PROMPT='%F{197}[%f%F{009}%n%f:%F{190}%~%f%F{197}]%f $(prompt-git-current-branch-2)
-%F{046}%B%(?!\(._.)/%f!%F{009}?(;_;%)?)%b%f%F{212}$%f '
+# PROMPT='%F{197}[%f%F{009}%n%f:%F{190}%~%f%F{197}]%f $(prompt-git-current-branch-2)
+# %F{046}%B%(?!\(._.)/%f!%F{009}?(;_;%)?)%b%f%F{212}$%f '
+
+# kumasan prompt
+PROMPT_GitS='%K{255}%F{238} %f'
+PROMPT_GitE='%F{255}%k%K{050}%k%f'
+PROMPT_Dir='%K{050}%F{238} %~ %f%k%F{050}%k%K{0}%k%f'
+PROMPT='$PROMPT_GitS $(prompt-git-current-branch) $PROMPT_GitE$PROMPT_Dir
+%F{015}ʕ •ɷ• ʔ %f '
 
 
 
