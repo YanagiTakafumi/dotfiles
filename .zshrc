@@ -193,7 +193,7 @@ PROMPT_GitS='%K{255}%F{238} %f'
 PROMPT_GitE='%F{255}%k%K{050}%k%f'
 PROMPT_Dir='%K{050}%F{238} %~ %f%k%F{050}%k%K{0}%k%f'
 PROMPT_KUMA_1='%(?!%F{015}ʕ •ɷ• ʔ %f!%F{160}ʕ •ﻌ•; ʔ %f)'
-PROMPT_KUMA_2='%(?!%F{015}ʕ`•ᴥ•´ʔ %f!%F{160}ʕ •ﻌ•; ʔ %f)'
+PROMPT_KUMA_2='%(?!%F{015}ʕ`•ᴥ•´ʔ  %f!%F{160}ʕ •ﻌ•; ʔ %f)'
 PROMPT='$PROMPT_GitS $(prompt-git-current-branch) $PROMPT_GitE$PROMPT_Dir
 $PROMPT_KUMA_2'
 
