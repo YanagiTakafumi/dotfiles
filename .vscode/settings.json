@@ -260,5 +260,6 @@
     "powermode.presets": "magic",
     "editor.tabSize": 2,
     "diffEditor.ignoreTrimWhitespace": false,
-    "files.autoSaveDelay": 10
+    "files.autoSaveDelay": 10,
+    "python.languageServer": "Microsoft"
 }
