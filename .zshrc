@@ -197,6 +197,16 @@ PROMPT_KUMA_2='%(?!%F{015}ʕ`•ᴥ•´ʔ  %f!%F{160}ʕ •ﻌ•; ʔ %f)'
 PROMPT='$PROMPT_GitS $(prompt-git-current-branch) $PROMPT_GitE$PROMPT_Dir
 $PROMPT_KUMA_2'
 
+# 線を引く処理
+function line() {
+  # print -P '${(r:COLUMNS::-:)}'
+  printf '\033[38;5;27m%s\033[m\n' ${(r:COLUMNS::-:)}
+}
+# 全てのコマンドを実行した後にする処理
+function precmd() {
+  line
+}
+
 
 
 # aliases
