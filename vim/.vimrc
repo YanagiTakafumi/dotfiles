@@ -52,6 +52,8 @@ set cursorline
 set backspace=indent,eol,start
 set laststatus=2
 set clipboard+=unnamed
+nmap <Tab>      gt
+nmap <S-Tab>    gT
 
 set showmatch
 set wildmenu
