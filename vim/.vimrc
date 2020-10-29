@@ -239,4 +239,7 @@ smap <C-k> <Plug>(neocomplcache_snippets_expand)
     call webdevicons#refresh()
   endif
 
+" fzf
+set rtp+=/usr/local/opt/fzf
+
 
