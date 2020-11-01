@@ -1,3 +1,4 @@
 # .swpを無視する
 *.swp
 /.DS_Store
+.zsh_hitory
