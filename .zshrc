@@ -215,8 +215,8 @@ alias ls="lsd"
 #alias ls="ls -G"
 alias cat="bat"
 alias blueterm="blueterm -b"
-alias webdir="mkdir html css js fonts"
 alias cargo_update="cargo install-update --all"
+alias python="python3"
 
 # 失敗したコマンドを履歴に残さない
 __record_command() {
