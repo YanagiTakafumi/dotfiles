@@ -15,3 +15,5 @@
 #alias tscreen="screen /dev/cu.usbserial-AI05V9J2"
 #alias webdir="mkdir html css js fonts"
 alias brew='PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin brew'
+
+export PATH="$HOME/.cargo/bin:$PATH"

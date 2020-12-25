@@ -162,6 +162,40 @@ function prompt-git-current-branch-2 {
   echo "${branch_status}[$branch_name]"
 }
 
+#Gitのブランチの状態をプロンプトの右端に表示
+function prompt-git-current-branch-3 {
+  local branch_name st branch_status
+
+  if [ ! -e  ".git" ]; then
+    # gitで管理されていないディレクトリは何も返さない
+    return
+  fi
+  branch_name=`git rev-parse --abbrev-ref HEAD 2> /dev/null`
+  st=`git status 2> /dev/null`
+  if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
+    # 全てcommitされてクリーンな状態
+    branch_status="%B%F{213}"
+  elif [[ -n `echo "$st" | grep "^Untracked files"` ]]; then
+    # gitに管理されていないファイルがある状態
+    branch_status="%B%F{213}?"
+  elif [[ -n `echo "$st" | grep "^Changes not staged for commit"` ]]; then
+    # git addされていないファイルがある状態
+    branch_status="%B%F{213}+"
+  elif [[ -n `echo "$st" | grep "^Changes to be committed"` ]]; then
+    # git commitされていないファイルがある状態
+    branch_status="%B%F{213}!"
+  elif [[ -n `echo "$st" | grep "^rebase in progress"` ]]; then
+    # コンフリクトが起こった状態
+    echo "%F{red}!(no branch)"
+    return
+  else
+    # 上記以外の状態の場合は青色で表示させる
+    branch_status="%F{blue}"
+  fi
+  # ブランチ名を色付きで表示する
+  echo "%F{247}on%f %B%F{183}${branch_name}%f %F{213}[${branch_status}]%f%b"
+}
+
 
 # プロンプトが表示されるたびにプロンプト文字列を評価、置換する
 setopt prompt_subst
@@ -194,8 +228,12 @@ PROMPT_GitE='%F{255}%k%K{050}%k%f'
 PROMPT_Dir='%K{050}%F{238} %~ %f%k%F{050}%k%K{0}%k%f'
 PROMPT_KUMA_1='%(?!%F{015}ʕ •ɷ• ʔ %f!%F{160}ʕ •ﻌ•; ʔ %f)'
 PROMPT_KUMA_2='%(?!%F{015}ʕ`•ᴥ•´ʔ  %f!%F{160}ʕ •ﻌ•; ʔ %f)'
-PROMPT='$PROMPT_GitS $(prompt-git-current-branch) $PROMPT_GitE$PROMPT_Dir
-$PROMPT_KUMA_2'
+#PROMPT='$PROMPT_GitS $(prompt-git-current-branch) $PROMPT_GitE$PROMPT_Dir
+#$PROMPT_KUMA_2'
+
+# git + dir
+PROMPT='%B%F{032}%~%f%b $(prompt-git-current-branch-3)
+%F{154}❱%f '
 
 # 線を引く処理
 function line() {
@@ -307,7 +345,7 @@ fi
 #jenv
 eval "$(jenv init -)"
 
-# githubを補完する
+# ghコマンドを補完する
 eval "$(gh completion -s zsh)"
 
 # fzf
@@ -317,6 +355,14 @@ export FZF_DEFAULT_OPTS='--height 80% --reverse --border'
 # 補完を強化
 if [ -e /usr/local/share/zsh-completions ]; then
     fpath=(/usr/local/share/zsh-completions $fpath)
+fi
+
+# pyenv 
+export PYENV_ROOT="$HOME/.pyenv"
+
+# 補完
+if command -v pyenv 1>/dev/null 2>&1; then
+	eval "$(pyenv init -)"
 fi
 
 
