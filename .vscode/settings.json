@@ -75,14 +75,14 @@
     "python.jediEnabled": false,
     "python.pythonPath": "python3",
     "java.errors.incompleteClasspath.severity": "ignore",
-    "java.home": "/Library/Java/JavaVirtualMachines/liberica-jdk-14-full.jdk/Contents/Home",
+    "java.home": "/Library/Java/JavaVirtualMachines/liberica-jdk-15-full.jdk/Contents/Home",
     "terminal.integrated.inheritEnv": false,
     "C_Cpp.updateChannel": "Insiders",
     "workbench.iconTheme": "material-icon-theme",
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
-    "terminal.integrated.shell.osx": "/bin/zsh",
+    "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
     "workbench.colorTheme": "Panda Syntax",
     "java.semanticHighlighting.enabled": true,
     "[html]": {
@@ -261,5 +261,14 @@
     "editor.tabSize": 2,
     "diffEditor.ignoreTrimWhitespace": false,
     "files.autoSaveDelay": 10,
-    "python.languageServer": "Microsoft"
+    "python.languageServer": "Microsoft",
+    "java.saveActions.organizeImports": true,
+    "git.autofetch": true,
+    "html.format.enable": false,
+    "markdown.marp.chromePath": "/Applications/Google\\ Chrome.app ",
+    "markdown.marp.themes": [
+        "./style/LT.css",
+        "./takajo/slide.css"
+    ],
+    "git.confirmSync": false
 }

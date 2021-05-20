@@ -235,27 +235,23 @@ PROMPT_KUMA_2='%(?!%F{015}ʕ`•ᴥ•´ʔ  %f!%F{160}ʕ •ﻌ•; ʔ %f)'
 PROMPT='%B%F{032}%~%f%b $(prompt-git-current-branch-3)
 %F{154}❱%f '
 
-# 線を引く処理
-function line() {
-  # print -P '${(r:COLUMNS::-:)}'
-  printf '\033[38;5;27m%s\033[m\n' ${(r:COLUMNS::-:)}
-}
-# 全てのコマンドを実行した後にする処理
-function precmd() {
-  line
-}
-
-
-
 # aliases
-alias ls="lsd"
+alias ls="/usr/local/bin/lsd"
 #alias ls='gls --color=auto'
 #alias ls="ls -G"
-alias cat="bat"
+alias cat="/usr/local/bin/bat"
 alias blueterm="blueterm -b"
 alias cargo_update="cargo install-update --all"
 alias python="python3"
-alias fic="git commit --allow-empty -m "first commit""
+alias fic="git commit --allow-empty -m "first""
+alias rust_doc="rustup docs --book"
+alias vi="/usr/local/bin/vi"
+
+
+# path
+export MANPATH=/usr/local/texlive/2021/texmf-dist/doc/man
+export INFOPATH=/usr/local/texlive/2021/texmf-dist/doc/info
+export PATH=/bin/:/usr/local/bin/:/usr/bin/:/usr/local/sbin/:$HOME/.deno/bin/:$HOME/.cargo/bin/:$HOME/.nodebrew/current/bin/:/usr/local/texlive/2021/bin/universal-darwin/
 
 # 失敗したコマンドを履歴に残さない
 __record_command() {
