@@ -11,8 +11,7 @@ This is not well written.So don't count on me too much.<br>My shell is zsh.It wa
 │  ├── extensions
 │  ├── settings.json
 │  └── vscode_install.sh
-├── .zprofile
-├── .zshenv
+├── .latexmkrc
 ├── .zshrc
 ├── bin
 ├── README.md
