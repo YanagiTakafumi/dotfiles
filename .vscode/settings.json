@@ -203,6 +203,7 @@
     // .tex ファイルの保存と同時に自動的にビルドを実行する設定があるが、文書が大きくなるに連れてビルドにも
     // 時間がかかってしまい、ビルドプログラムの負荷がエディタに影響するため、無効化しておく。
     "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.latex.clean.enabled": true,
     "vetur.dev.vlsPath": "/User/tyautyau56/.nodebrew/current/lib/node_modules/vls",
     "vetur.experimental.templateInterpolationService": true,
     "powermode.enabled": true,
@@ -220,5 +221,5 @@
         "./takajo/slide.css"
     ],
     "git.confirmSync": false,
-    "explorer.confirmDelete": false
+    "explorer.confirmDelete": false,
 }

@@ -8,5 +8,4 @@ $dvipdf = 'dvipdfmx %O -o %D %S';
 $dvips = 'dvips %O -z -f %S | convbkmk -u > %D';
 $pdf_mode = 4;
 $pvc_view_file_via_temporary = 0;
-$pdf_previewer = 'open -ga /System/Applications/Preview.app/';
 
