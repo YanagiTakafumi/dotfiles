@@ -20,4 +20,5 @@ This is not well written.So don't count on me too much.<br>My shell is zsh.It wa
 └── vim
    └── .vimrc
 ```
+add neovim configuration
 
