@@ -1,0 +1,40 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'cohama/lexima.vim'
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+hook_add = '''
+  let g:rustfmt_autosave = 1
+'''
+
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+hook_add = '''
+  let g:airline_theme = 'one'
+  let g:airline_powerline_fonts = 1
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#hunks#enabled = 0
+  let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
+'''
+
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
+
+[[plugins]]
+repo = 'rakr/vim-one'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
+
