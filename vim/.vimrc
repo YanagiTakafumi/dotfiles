@@ -93,7 +93,6 @@ endif
 let g:dein#auto_recache = 1
 
 let g:airline_theme = 'wombat'
-set laststatus=2
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#wordcount#enabled = 0
