@@ -228,12 +228,12 @@ PROMPT_GitE='%F{255}%k%K{050}%k%f'
 PROMPT_Dir='%K{050}%F{238} %~ %f%k%F{050}%k%K{0}%k%f'
 PROMPT_KUMA_1='%(?!%F{015}ʕ •ɷ• ʔ %f!%F{160}ʕ •ﻌ•; ʔ %f)'
 PROMPT_KUMA_2='%(?!%F{015}ʕ`•ᴥ•´ʔ  %f!%F{160}ʕ •ﻌ•; ʔ %f)'
-#PROMPT='$PROMPT_GitS $(prompt-git-current-branch) $PROMPT_GitE$PROMPT_Dir
-#$PROMPT_KUMA_2'
+PROMPT='$PROMPT_GitS $(prompt-git-current-branch) $PROMPT_GitE$PROMPT_Dir
+$PROMPT_KUMA_2'
 
 # git + dir
-PROMPT='%B%F{032}%~%f%b $(prompt-git-current-branch-3)
-%F{154}❱%f '
+#PROMPT='%B%F{032}%~%f%b $(prompt-git-current-branch-3)
+#%F{154}❱%f '
 
 # aliases
 alias ls="lsd"
@@ -245,7 +245,7 @@ alias cargo_update="cargo install-update --all"
 alias python="python3"
 alias fic="git commit --allow-empty -m "first""
 alias rust_doc="rustup docs --book"
-alias vi="vi"
+alias vi="nvim"
 
 
 # path
@@ -253,6 +253,7 @@ export MANPATH=/usr/local/texlive/2021/texmf-dist/doc/man
 export INFOPATH=/usr/local/texlive/2021/texmf-dist/doc/info
 export TEXMF=/usr/local/texlive/2021/texmf-dist
 export PATH=/bin/:/usr/local/bin/:/usr/bin/:/usr/local/sbin/:$HOME/.deno/bin/:$HOME/.cargo/bin/:$HOME/.nodebrew/current/bin/:$HOME/:/usr/local/texlive/2021/bin/universal-darwin/
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # 失敗したコマンドを履歴に残さない
 __record_command() {
