@@ -17,6 +17,10 @@ This is not well written.So don't count on me too much.<br>My shell is zsh.It wa
 ├── README.md
 ├── tmux
 │  └── .tmux.conf
+├── .config/nvim
+│  ├── dein.toml
+│  ├── dein_lazy.toml
+│  └── init.vim
 └── vim
    └── .vimrc
 ```
