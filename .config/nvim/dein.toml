@@ -46,3 +46,6 @@ repo = 'cocopon/iceberg.vim'
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
