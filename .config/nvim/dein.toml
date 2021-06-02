@@ -14,12 +14,26 @@ hook_add = '''
 repo = 'neoclide/coc.nvim'
 
 [[plugins]]
-repo = 'scrooloose/nerdtree'
-hook_add - '''
-  nnoremap <leader>n :NERDTreeFocus<CR>
-  nnoremap <C-n> :NERDTree<CR>
-  nnoremap <C-t> :NERDTreeToggle<CR>
-  nnoremap <C-f> :NERDTreeFind<CR>
+repo = 'lambdalisue/fern.vim'
+hook_add = '''
+  nnoremap <C-t> :Fern . -reveal=% -drawer -toggle -width=40<CR>
+  let g:fern#renderer = 'nerdfont'
+'''
+
+[[plugins]]
+repo = 'lambdalisue/nerdfont.vim'
+
+[[plugins]]
+repo = 'lambdalisue/fern-renderer-nerdfont.vim'
+
+[[plugins]]
+repo = 'lambdalisue/glyph-palette.vim'
+hook_add = '''
+  augroup my-glyph-palette
+    autocmd! *
+    autocmd FileType fern call glyph_palette#apply()
+    autocmd FileType nerdtree,startify call glyph_palette#apply()
+  augroup END
 '''
 
 [[plugins]]
@@ -45,7 +59,7 @@ repo = 'airblade/vim-gitgutter'
 repo = 'cocopon/iceberg.vim'
 
 [[plugins]]
-repo = 'Yggdroot/indentLine'
+repo = 'Yggdroot/indentLine' 
 
 [[plugins]]
-repo = 'ryanoasis/vim-devicons'
+repo = 'tpope/vim-fugitive'
