@@ -1,13 +1,3 @@
-# System-wide profile for interactive zsh(1) shells.
-
-# Setup user specific overrides for this in ~/.zhsrc. See zshbuiltins(1)
-# and zshoptions(1) for more details.
-
-# Correctly display UTF-8 with combining characters.
-if [[ "$(locale LC_CTYPE)" == "UTF-8" ]]; then
-    setopt COMBINING_CHARS
-fi
-
 # Disable the log builtin, so we don't conflict with /usr/bin/log
 disable log
 
@@ -242,17 +232,22 @@ alias ls="lsd"
 alias cat="bat"
 alias blueterm="blueterm -b"
 alias cargo_update="cargo install-update --all"
-alias python="python3"
 alias fic="git commit --allow-empty -m "first""
 alias rust_doc="rustup docs --book"
 alias vi="nvim"
 
+# pyenv 
+export PYENV_ROOT="$HOME/.pyenv"
 
+# 補完
+if command -v pyenv 1>/dev/null 2>&1; then
+	eval "$(pyenv init -)"
+fi
 # path
 export MANPATH=/usr/local/texlive/2021/texmf-dist/doc/man
 export INFOPATH=/usr/local/texlive/2021/texmf-dist/doc/info
 export TEXMF=/usr/local/texlive/2021/texmf-dist
-export PATH=/bin/:/usr/local/bin/:/usr/bin/:/usr/local/sbin/:$HOME/.deno/bin/:$HOME/.cargo/bin/:$HOME/.nodebrew/current/bin/:$HOME/:/usr/local/texlive/2021/bin/universal-darwin/
+export PATH=/usr/local/bin/:$PYENV_ROOT/bin:/bin/:/usr/bin/:/usr/local/sbin/:$HOME/.deno/bin/:$HOME/.cargo/bin/:$HOME/.nodebrew/current/bin/:$HOME/:/usr/local/texlive/2021/bin/universal-darwin/
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # 失敗したコマンドを履歴に残さない
@@ -341,9 +336,6 @@ if [ ! -z $TMUX ]; then
     fi
 fi
 
-#jenv
-eval "$(jenv init -)"
-
 # ghコマンドを補完する
 eval "$(gh completion -s zsh)"
 
@@ -355,15 +347,6 @@ export FZF_DEFAULT_OPTS='--height 80% --reverse --border'
 if [ -e /usr/local/share/zsh-completions ]; then
     fpath=(/usr/local/share/zsh-completions $fpath)
 fi
-
-# pyenv 
-export PYENV_ROOT="$HOME/.pyenv"
-
-# 補完
-if command -v pyenv 1>/dev/null 2>&1; then
-	eval "$(pyenv init -)"
-fi
-
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
