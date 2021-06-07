@@ -238,17 +238,15 @@ alias vi="nvim"
 
 # pyenv 
 export PYENV_ROOT="$HOME/.pyenv"
-
-# 補完
-if command -v pyenv 1>/dev/null 2>&1; then
-	eval "$(pyenv init -)"
-fi
 # path
 export MANPATH=/usr/local/texlive/2021/texmf-dist/doc/man
 export INFOPATH=/usr/local/texlive/2021/texmf-dist/doc/info
 export TEXMF=/usr/local/texlive/2021/texmf-dist
 export PATH=/usr/local/bin/:$PYENV_ROOT/bin:/bin/:/usr/bin/:/usr/local/sbin/:$HOME/.deno/bin/:$HOME/.cargo/bin/:$HOME/.nodebrew/current/bin/:$HOME/:/usr/local/texlive/2021/bin/universal-darwin/
 export XDG_CONFIG_HOME="$HOME/.config"
+
+# 補完
+eval "$(pyenv init --path)"
 
 # 失敗したコマンドを履歴に残さない
 __record_command() {
