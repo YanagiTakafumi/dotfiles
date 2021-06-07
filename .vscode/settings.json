@@ -75,7 +75,7 @@
     "python.jediEnabled": false,
     "python.pythonPath": "python3",
     "java.errors.incompleteClasspath.severity": "ignore",
-    "java.home": "/Library/Java/JavaVirtualMachines/liberica-jdk-15-full.jdk/Contents/Home",
+    "java.home": "/Library/Java/JavaVirtualMachines/liberica-jdk-16-full.jdk/Contents/Home",
     "terminal.integrated.inheritEnv": false,
     "C_Cpp.updateChannel": "Insiders",
     "workbench.iconTheme": "material-icon-theme",
