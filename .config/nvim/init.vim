@@ -51,3 +51,4 @@ colorscheme iceberg
 
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 nnoremap <C-w> :tabc<CR>
+nnoremap <F5> :term cargo run ++close<CR>

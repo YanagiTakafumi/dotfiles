@@ -49,3 +49,7 @@ repo = 'Yggdroot/indentLine'
 
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
+
+[[plugins]]
+repo = "thinca/vim-quickrun"
+
