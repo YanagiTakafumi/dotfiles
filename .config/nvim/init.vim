@@ -47,7 +47,7 @@ endif
 
 filetype plugin indent on
 syntax enable
-colorscheme iceberg
+colorscheme edge
 
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 nnoremap <C-w> :tabc<CR>
