@@ -12,6 +12,13 @@ hook_add = '''
 
 [[plugins]]
 repo = 'neoclide/coc.nvim'
+hook_add = '''
+  nmap <silent> gd <Plug>(coc-definition)
+  nmap <silent> gy <Plug>(coc-type-definition)
+  nmap <silent> gi <Plug>(coc-implementation)
+  nmap <silent> gr <Plug>(coc-references)
+  nmap <leader>rn <Plug>(coc-rename)
+'''
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
@@ -20,6 +27,7 @@ hook_add = '''
   nnoremap <C-n> :NERDTree<CR>
   nnoremap <C-t> :NERDTreeToggle<CR>
   nnoremap <C-f> :NERDTreeFind<CR>
+  nnoremap <C-m> :NERDTreeFocus<CR>
 '''
 
 [[plugins]]
