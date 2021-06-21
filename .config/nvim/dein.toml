@@ -17,7 +17,8 @@ hook_add = '''
   nmap <silent> gy <Plug>(coc-type-definition)
   nmap <silent> gi <Plug>(coc-implementation)
   nmap <silent> gr <Plug>(coc-references)
-  nmap <leader>rn <Plug>(coc-rename)
+  nmap <silent> <space>rn <Plug>(coc-rename)
+  nmap <silent> <space>fmt <Plug>(coc-format)
 '''
 
 [[plugins]]
@@ -64,3 +65,5 @@ repo = 'tpope/vim-commentary'
 [[plugins]]
 repo = 'sainnhe/edge'
 
+[[plugins]]
+repo = 'cespare/vim-toml'
