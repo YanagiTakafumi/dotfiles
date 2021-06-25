@@ -50,5 +50,5 @@ syntax enable
 colorscheme edge
 
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-nnoremap <silent>, gT<CR>
-nnoremap <silent>. gt<CR>
+nnoremap <silent>, :bn<CR>
+nnoremap <silent>. :bp<CR>
