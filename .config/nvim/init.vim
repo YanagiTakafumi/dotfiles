@@ -50,7 +50,5 @@ syntax enable
 colorscheme edge
 
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-nnoremap <C-w> :tabc<CR>
-nnoremap <F5> :term cargo run<CR>
 nnoremap <silent>, gT<CR>
 nnoremap <silent>. gt<CR>
