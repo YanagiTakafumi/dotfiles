@@ -13,6 +13,8 @@ set mouse=a
 set cursorline
 set background=dark
 set noshowmode
+set laststatus=2 
+set termguicolors
 
 if &term =~ "xterm"
 	let &t_SI .= "\e[?2004h"
@@ -47,8 +49,9 @@ endif
 
 filetype plugin indent on
 syntax enable
-colorscheme edge
+colorscheme elly
 
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 nnoremap <silent>, :bn<CR>
 nnoremap <silent>. :bp<CR>
+tnoremap <Esc> <C-\><C-n>

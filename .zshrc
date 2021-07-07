@@ -236,14 +236,18 @@ alias fic="git commit --allow-empty -m "first""
 alias rust_doc="rustup docs --book"
 alias vi="nvim"
 
+# nodenv
+export NODENV_VERSION=14.17.2
 # pyenv 
 export PYENV_ROOT="$HOME/.pyenv"
 # path
 export MANPATH=/usr/local/texlive/2021/texmf-dist/doc/man
 export INFOPATH=/usr/local/texlive/2021/texmf-dist/doc/info
 export TEXMF=/usr/local/texlive/2021/texmf-dist
-export PATH=/usr/local/bin/:$PYENV_ROOT/bin:/bin/:/usr/bin/:/usr/local/sbin/:$HOME/.deno/bin/:$HOME/.cargo/bin/:$HOME/.nodebrew/current/bin/:$HOME/:/usr/local/texlive/2021/bin/universal-darwin/
+export PATH=/usr/local/bin:$PYENV_ROOT/bin:/bin:/usr/bin:/usr/local/sbin:$HOME/.deno/bin:$HOME/.nodenv/bin:$HOME/.cargo/bin:$HOME/:/usr/local/texlive/2021/bin/universal-darwin/:$HOME/.nodenv/versions/$NODENV_VERSION/lib/node_modules
 export XDG_CONFIG_HOME="$HOME/.config"
+
+eval "$(nodenv init -)"
 
 # 補完
 eval "$(pyenv init --path)"

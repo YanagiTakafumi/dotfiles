@@ -32,13 +32,41 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'vim-airline/vim-airline'
+repo = 'josa42/vim-lightline-coc'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
 hook_add = '''
-  let g:airline_theme = 'one'
-  let g:airline_powerline_fonts = 1
-  let g:airline#extensions#tabline#enabled = 1
-  let g:airline#extensions#hunks#enabled = 0
-  let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
+  let g:lightline = {
+  \ 'colorscheme': 'elly',
+  \ 'separator': {
+  \   'left': "\ue0b0", 
+  \   'right': "\ue0b2"
+  \ },
+  \ 'subseparator': {
+  \   'left': "\ue0b1",
+  \   'right': "\ue0b3"
+  \ },
+  \ 'active': {
+  \   'left': [['mode'], ['gitbranch', 'readonly', 'filename', 'modified'], ['coc_status']],
+  \ },
+  \ 'component_function': {
+  \   'gitbranch': 'FugitiveHead'
+  \ },
+  \}
+
+  let g:lightline.component_expand = {
+  \ 'linter_ok': 'lightline#coc#ok',
+  \ 'status': 'lightline#coc#status',
+  \ }
+
+  let g:lightline.component_type = {
+  \ 'linter_ok': 'left',
+  \ }
+
+  let g:lightline.active = {
+  \ 'right': [['coc_ok'], ['lineinfo'], ['percent'], ['filetype']]
+  \ }
 '''
 
 [[plugins]]
@@ -49,9 +77,11 @@ repo = 'rakr/vim-one'
 
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
-
-[[plugins]]
-repo = 'cocopon/iceberg.vim'
+hook_add = '''
+  let g:gitgutter_sign_added = "\uf067"
+  let g:gitgutter_sign_modified = "\uf054"
+  let g:gitgutter_sign_removed = "\uf00d"
+'''
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'
@@ -63,7 +93,11 @@ repo = 'ryanoasis/vim-devicons'
 repo = 'tpope/vim-commentary'
 
 [[plugins]]
-repo = 'sainnhe/edge'
+repo = 'sainnhe/sonokai'
 
 [[plugins]]
 repo = 'cespare/vim-toml'
+
+[[plugins]]
+repo = 'ulwlu/elly.vim'
+

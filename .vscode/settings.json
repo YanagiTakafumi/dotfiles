@@ -223,4 +223,5 @@
     "git.confirmSync": false,
     "explorer.confirmDelete": false,
     "vscode-neovim.neovimInitVimPaths.darwin": "/Users/tyautyau56/.config/nvim/init.vim",
+    "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
 }
