@@ -32,9 +32,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'josa42/vim-lightline-coc'
-
-[[plugins]]
 repo = 'itchyny/lightline.vim'
 hook_add = '''
   let g:lightline = {
@@ -48,25 +45,15 @@ hook_add = '''
   \   'right': "\ue0b3"
   \ },
   \ 'active': {
-  \   'left': [['mode'], ['gitbranch', 'readonly', 'filename', 'modified'], ['coc_status']],
+  \   'left': [['mode'], ['gitbranch', 'readonly', 'filename', 'modified']],
+  \   'right': [['coc_status'], ['lineinfo'], ['percent'], ['filetype']]
   \ },
   \ 'component_function': {
-  \   'gitbranch': 'FugitiveHead'
+  \   'gitbranch': 'gina#component#repo#branch',
+  \   'coc_status': 'coc#status',
   \ },
   \}
 
-  let g:lightline.component_expand = {
-  \ 'linter_ok': 'lightline#coc#ok',
-  \ 'status': 'lightline#coc#status',
-  \ }
-
-  let g:lightline.component_type = {
-  \ 'linter_ok': 'left',
-  \ }
-
-  let g:lightline.active = {
-  \ 'right': [['coc_ok'], ['lineinfo'], ['percent'], ['filetype']]
-  \ }
 '''
 
 [[plugins]]
@@ -101,3 +88,5 @@ repo = 'cespare/vim-toml'
 [[plugins]]
 repo = 'ulwlu/elly.vim'
 
+[[plugins]]
+repo = 'lambdalisue/gina.vim'
