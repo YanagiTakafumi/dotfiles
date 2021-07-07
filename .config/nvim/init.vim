@@ -15,6 +15,8 @@ set background=dark
 set noshowmode
 set laststatus=2 
 set termguicolors
+set hidden
+set showtabline=2  
 
 if &term =~ "xterm"
 	let &t_SI .= "\e[?2004h"
@@ -52,6 +54,4 @@ syntax enable
 colorscheme elly
 
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-nnoremap <silent>, :bn<CR>
-nnoremap <silent>. :bp<CR>
 tnoremap <Esc> <C-\><C-n>

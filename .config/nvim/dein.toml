@@ -45,14 +45,34 @@ hook_add = '''
   \   'right': "\ue0b3"
   \ },
   \ 'active': {
-  \   'left': [['mode'], ['gitbranch', 'readonly', 'filename', 'modified']],
-  \   'right': [['coc_status'], ['lineinfo'], ['percent'], ['filetype']]
+  \   'left': [['mode'], ['gitbranch', 'readonly', 'filename', 'modified'],['coc_status']],
+  \   'right': [['lineinfo'], ['percent'], ['filetype']]
   \ },
   \ 'component_function': {
   \   'gitbranch': 'gina#component#repo#branch',
   \   'coc_status': 'coc#status',
+  \   'bufferinfo': 'lightline#buffer#bufferinfo'
   \ },
-  \}
+  \ 'tabline': {
+  \   'left': [ [ 'bufferinfo' ],
+  \             [ 'separator' ],
+  \             [ 'bufferbefore', 'buffercurrent', 'bufferafter' ], ],
+  \   'right': [ [ 'close' ], ],
+  \ },
+  \ 'component_expand': {
+  \   'buffercurrent': 'lightline#buffer#buffercurrent',
+  \   'bufferbefore': 'lightline#buffer#bufferbefore',
+  \   'bufferafter': 'lightline#buffer#bufferafter',
+  \ },
+  \ 'component_type': {
+  \   'buffercurrent': 'tabsel',
+  \   'bufferbefore': 'raw',
+  \   'bufferafter': 'raw',
+  \ },
+  \ 'component': {
+  \   'separator': '',
+  \ },
+  \ }
 
 '''
 
@@ -90,3 +110,20 @@ repo = 'ulwlu/elly.vim'
 
 [[plugins]]
 repo = 'lambdalisue/gina.vim'
+
+[[plugins]]
+repo = 'mengelbrecht/lightline-bufferline'
+hook_add = '''
+  nnoremap <silent>, :bprev<CR>
+  nnoremap <silent>. :bnext<CR>
+  let g:lightline_buffer_enable_devicons = 1
+  let g:lightline_buffer_show_bufnr = 1
+  let g:lightline_buffer_fname_mod = ':t'
+  let g:lightline_buffer_excludes = ['vimfiler']
+  let g:lightline_buffer_maxflen = 30
+  let g:lightline_buffer_maxfextlen = 3
+  let g:lightline_buffer_minflen = 16
+  let g:lightline_buffer_minfextlen = 3
+  let g:lightline_buffer_reservelen = 20
+'''
+
