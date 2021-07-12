@@ -1,4 +1,5 @@
 {
+  "suggest.noselect":false,
   "git.addedSign.hlGroup": "CocDiffAdd",
 	"git.changedSign.hlGroup": "CocDiffChange",
 	"git.removedSign.hlGroup": "CocDiffDelete",

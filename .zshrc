@@ -227,8 +227,6 @@ $PROMPT_KUMA_2'
 
 # aliases
 alias ls="lsd"
-#alias ls='gls --color=auto'
-#alias ls="ls -G"
 alias cat="bat"
 alias blueterm="blueterm -b"
 alias cargo_update="cargo install-update --all"
@@ -244,7 +242,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export MANPATH=/usr/local/texlive/2021/texmf-dist/doc/man
 export INFOPATH=/usr/local/texlive/2021/texmf-dist/doc/info
 export TEXMF=/usr/local/texlive/2021/texmf-dist
-export PATH=/usr/local/bin:$PYENV_ROOT/bin:/bin:/usr/bin:/usr/local/sbin:$HOME/.deno/bin:$HOME/.nodenv/bin:$HOME/.cargo/bin:$HOME/:/usr/local/texlive/2021/bin/universal-darwin/:$HOME/.nodenv/versions/$NODENV_VERSION/lib/node_modules
+export PATH=/usr/local/bin:$PYENV_ROOT/bin:/bin:/usr/bin:/usr/local/sbin:$HOME/.deno/bin:$HOME/.nodenv/bin:$HOME/.cargo/bin:$HOME/:/usr/local/texlive/2021/bin/universal-darwin/:$HOME/.nodenv/versions/$NODENV_VERSION/lib/node_modules:./node_modules
 export XDG_CONFIG_HOME="$HOME/.config"
 
 eval "$(nodenv init -)"
@@ -276,6 +274,9 @@ __update_history() {
   fi
 }
 precmd_functions+=(__update_history)
+
+export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+export FZF_CTRL_T_OPTS='--preview "bat  --color=always --style=header,grid --line-range :100 {}"'
 
 #git log的なあれ
 fshow() {
@@ -380,3 +381,5 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/history-search-multi-word
 zinit light paulirish/git-open
 zinit light b4b4r07/enhancd
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
