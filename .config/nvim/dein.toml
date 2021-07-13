@@ -27,7 +27,6 @@ hook_add = '''
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 hook_add = '''
-  nnoremap <leader>n :NERDTreeFocus<CR>
   nnoremap <C-n> :NERDTree<CR>
   nnoremap <C-t> :NERDTreeToggle<CR>
   nnoremap <C-f> :NERDTreeFind<CR>
@@ -73,9 +72,6 @@ hook_add = '''
 repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
-repo = 'rakr/vim-one'
-
-[[plugins]]
 repo = 'airblade/vim-gitgutter'
 hook_add = '''
   let g:gitgutter_sign_added = "\uf067"
@@ -91,9 +87,6 @@ repo = 'ryanoasis/vim-devicons'
 
 [[plugins]]
 repo = 'tpope/vim-commentary'
-
-[[plugins]]
-repo = 'sainnhe/sonokai'
 
 [[plugins]]
 repo = 'cespare/vim-toml'
